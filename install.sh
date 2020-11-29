@@ -13,13 +13,17 @@ echo and also remove unnecassary packeages
 sleep 3
 
 clear
-
-pkg update -y
-
+pkg  uninstall autoconf
+cd $PREFIX/bin
+touch auto-update
+echo "pkg update -y
 pkg upgrade -y
-
 clear
-
 pip install --upgrade pip
-
-apt autoremove -y
+apt autoremove -y" >> auto-update
+chmod +x auto-update
+clear
+echo type auto-update
+sleep 2
+cd 
+rm -rf termux-autoupdate
